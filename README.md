@@ -6,9 +6,13 @@
 Rheumatoid Arthritis (RA) is a chronic autoimmune disease characterized by persistent inflammation and progressive joint destruction.
 
 This project aims to:
+
 Identify differentially expressed genes (DEGs) in RA patients.
+
 Investigate biological processes associated with disease development.
+
 Explore enriched molecular pathways and signaling networks.
+
 Generate biologically meaningful insights from RNA-seq data.
 
 ## dataset
@@ -32,29 +36,42 @@ Early Rheumatoid Arthritis vs Healthy Controls
 
 ### Data Import
 
+
 .RNA-seq count matrix loading
+
 .Sample metadata loading
+
 .Metadata matching with count matrix
 
 ### Data Preprocessing
 
 .Disease category cleaning
+
 .Sample annotation organization
+
 .Conversion of variables to factors
+
 .Construction of DESeq2 dataset
 
 ### Gene Filtering
 
 Lowly expressed genes were removed using:
+
 .Minimum count threshold ≥ 10
+
 .Expression required in at least the smallest experimental group
 
 ### Quality Control
 
+
 .Library size inspection
+
 .Count distribution visualization
+
 .Boxplots before normalization
+
 .Sample-to-sample distance heatmap
+
 .Principal Component Analysis (PCA)
 
 ### Normalization
@@ -64,38 +81,54 @@ Variance Stabilizing Transformation (VST) was applied to reduce heteroscedastici
 ### Differential Expression Analysis
 
 Differential expression analysis was performed using DESeq2.
+
 Comparison:
 
 Early Rheumatoid Arthritis vs Healthy Controls
 
 Statistical criteria:
+
 Adjusted p-value < 0.05
+
 |log2 Fold Change| > 1
 
 ### LFC Shrinkage
+
 Log fold changes were stabilized using the apeglm shrinkage method.
 
 ###  Gene Annotation
 
 Gene identifiers were mapped to:
+
 .Gene Symbols
+
 .Gene Names
+
 .Entrez IDs
+
 using org.Hs.eg.db.
 
 ###  Visualization
 
 Generated visualizations include:
+
 .PCA plots
+
 .Sample distance heatmaps
+
 .Volcano plots
+
 .Differential expression heatmaps
 
 ###  Functional Enrichment Analysis
 
+
 Gene Ontology (GO):
+
 .Biological Process (BP)
+
 .Molecular Function (MF)
+
 .Cellular Component (CC)
 
 ### Pathway Analysis
@@ -113,42 +146,71 @@ Reactome pathway enrichment analysis was performed to investigate higher-order b
 
 ### Tools and Packages
 
+
 Programming Language
+
 R
+
 Main Packages
+
 DESeq2
+
 clusterProfiler
+
 ReactomePA
+
 enrichplot
+
 EnhancedVolcano
+
 org.Hs.eg.db
+
 ggplot2
+
 pheatmap
+
 dplyr
+
 apeglm
+
 IHW
+
 
 ### Output Files
 
 The workflow generates:
 
+
 Differential Expression Results
+
 desq_allrheumatiod.csv
+
 desq_up_allrheumatiod.csv
+
 desq_down_allrheumatiod.csv
+
 
 ### Annotated Results
 
+
 desq_annotat_rheumatiod.csv
+
 desq_annotat_uprheumatiod.csv
+
 desq_annotat_downrheumatiod.csv
 
 ### GO Enrichment
+
 up_biologicalprocces.csv
+
 down_biologicalprocces.csv
+
 up_molecularfunction.csv
+
 down_molecularfunction.csv
 
 ### KEGG Analysis
+
 kggpathway_up.csv
+
 kggpathway_down.csv
